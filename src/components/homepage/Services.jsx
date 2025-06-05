@@ -3,7 +3,7 @@ import SkillProgressCircle from "../../components/homepage/SkillProgressCircle";
 
 export default function Services() {
   return (
-    <Box sx={{ px: { xs: 2, md: "250px" }, py: { xs: 4, md: "100px" } }}>
+    <Box sx={{ px: { xs: 2, md: "25px" }, py: { xs: 4, md: "100px" } }}>
       <Container
         maxWidth="lg"
         sx={{

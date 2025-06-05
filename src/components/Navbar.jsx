@@ -60,7 +60,15 @@ function Navbar() {
               key={path}
               component={Link}
               to={path}
-              sx={{ color: "white", textTransform: "none" }}
+              sx={{
+                color: "white",
+                textTransform: "none",
+                fontSize: "1.05rem",
+                transition: "color 0.3s",
+                "&:hover": {
+                  color: "#FBA504",
+                },
+              }}
             >
               {label}
             </Button>
@@ -83,17 +91,30 @@ function Navbar() {
           <Typography variant="h6" fontWeight="bold" mb={2}>
             Menu
           </Typography>
-          {menuItems.map(({ label, path }) => (
-            <ListItem
-              button
-              key={path}
-              component={Link}
-              to={path}
-              onClick={toggleDrawer(false)}
-            >
-              <ListItemText primary={label} />
-            </ListItem>
-          ))}
+          <List>
+            {menuItems.map(({ label, path }) => (
+              <ListItem
+                button
+                key={path}
+                component={Link}
+                to={path}
+                onClick={toggleDrawer(false)}
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#f0f0f0",
+                  },
+                }}
+              >
+                <ListItemText
+                  primary={
+                    <Typography fontSize="1.05rem" fontWeight="500">
+                      {label}
+                    </Typography>
+                  }
+                />
+              </ListItem>
+            ))}
+          </List>
         </Box>
       </Drawer>
     </AppBar>
