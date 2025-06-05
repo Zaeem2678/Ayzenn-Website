@@ -1,7 +1,7 @@
 import Container from "@mui/material/Container";
-import { Box, Typography } from "@mui/material";
+import { Box, GlobalStyles, Typography } from "@mui/material";
 import ShakeButton from "../Button";
-
+import { Typewriter } from "react-simple-typewriter";
 export default function () {
   return (
     <Box
@@ -30,36 +30,57 @@ export default function () {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Typography
-            variant="h4"
-            color="#fba504"
-            sx={{
-              animation: "glowText 6s infinite alternate",
-              fontWeight: "bold",
-            }}
-          >
-            Transform Your Vision with Next-Gen Tech Solutions
+          <Typography variant="h4" color="#fba504" fontWeight="bold">
+            <Typewriter
+              words={["Transform Your Vision with Next-Gen Tech Solutions"]}
+              loop={1}
+              cursor
+              cursorStyle=""
+              typeSpeed={60}
+              deleteSpeed={0}
+              delaySpeed={2000}
+            />
           </Typography>
           <Typography variant="h7" color="#fff">
             Leading the Charge in AI, Web, Mobile, and Custom Solutions
           </Typography>
           <ShakeButton>Get Started</ShakeButton>
         </Box>
-        <Box
-          sx={{
-            width: { xs: "500px", md: "650px" },
-            display: "flex",
-            animation: "float 4s ease-in-out infinite",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img
-            src="https://www.ayzenntechnologies.com/img/hero.png"
-            alt=""
-            style={{ maxWidth: "100%", height: "auto" }}
+        <>
+          <GlobalStyles
+            styles={`
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    `}
           />
-        </Box>
+
+          <Box
+            sx={{
+              width: "100%", // let it fill the screen width
+              maxWidth: { xs: "100%", md: "650px" }, // restrict on large screens
+              display: "flex",
+              animation: "float 4s ease-in-out infinite",
+              justifyContent: "center",
+              alignItems: "center",
+              px: 2, // optional: small horizontal padding
+            }}
+          >
+            <img
+              src="https://www.ayzenntechnologies.com/img/hero.png"
+              alt=""
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Box>
+        </>
       </Container>
     </Box>
   );

@@ -1,4 +1,13 @@
+/* 1. Remove default margins and paddings */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Prevent horizontal scroll from overflow */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
 }

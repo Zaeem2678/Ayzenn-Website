@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-
+import ShakeButton from "./Button";
 const menuItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
@@ -74,7 +74,17 @@ function Navbar() {
             </Button>
           ))}
         </Box>
-
+        {/* Right: Get Started Button */}
+        <Box sx={{ display: { xs: "none", md: "flex" }, ml: "auto" }}>
+          <ShakeButton
+            sx={{
+              width: "100%",
+              borderRadius: "30px",
+            }}
+          >
+            Get Started
+          </ShakeButton>
+        </Box>
         {/* Right: Mobile Menu Icon */}
         <IconButton
           color="inherit"

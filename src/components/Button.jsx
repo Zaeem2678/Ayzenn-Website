@@ -16,7 +16,7 @@ const ShakeButton = ({ children, sx = {}, ...props }) => {
       variant="text"
       color="primary"
       sx={{
-        width: "30%",
+        width: "35%",
         bgcolor: "#fff",
         color: "black",
         px: "16px",
