@@ -9,6 +9,7 @@ const FormContainer = styled(Box)({
   padding: "20px",
   maxWidth: "600px",
   margin: "0 auto",
+  
 });
 
 const StyledTextField = styled(TextField)({
@@ -32,6 +33,7 @@ const StyledButton = styled(Button)({
   backgroundColor: "#1a1a1a",
   color: "#fff",
   padding: "10px 20px",
+  width:'100%',
   borderRadius: "8px",
   textTransform: "none",
   fontWeight: "bold",
@@ -45,7 +47,7 @@ export default function Contact() {
     <>
       <Pagenavigation title={"Contact Us"} subheading={"Contact Us"} />
       <FormContainer>
-        <Typography variant="h4" gutterBottom>
+        <Typography fontWeight={"bold"} marginBottom={'30px'} variant="h4" gutterBottom>
           Contact For Any Query
         </Typography>
         <Box display="flex" gap={2} width="100%">
@@ -59,7 +61,9 @@ export default function Contact() {
           multiline
           rows={4}
         />
-        <StyledButton>Send Message</StyledButton>
+        <StyledButton sx={{
+          marginBottom:'40px'
+        }}>Send Message</StyledButton>
       </FormContainer>
     </>
   );
