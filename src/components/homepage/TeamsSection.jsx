@@ -1,7 +1,6 @@
 import {
   Box,
   Typography,
-  Grid,
   Avatar,
   Card,
   CardContent,
@@ -48,7 +47,7 @@ const TeamsSection = () => {
             xs: "1fr", // 1 column on mobile
             md: "repeat(3, 1fr)", // 3 columns on desktop
           },
-          marginX:'100px',
+          marginX: "100px",
           gap: 0,
           justifyContent: "center",
         }}
@@ -59,9 +58,9 @@ const TeamsSection = () => {
             elevation={3}
             sx={{
               borderRadius: 3,
-              paddingY:"20px",
-              paddingX:'60px',
-              
+              paddingY: "20px",
+              paddingX: "60px",
+
               maxWidth: 360,
               mx: "auto", // centers card
             }}

@@ -1,13 +1,20 @@
 import CountUp from "react-countup";
 import { Box, Typography, Container } from "@mui/material";
+import { useInView } from "react-intersection-observer";
+
 export default function Facts() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   return (
     <Box
+      ref={ref}
       sx={{
         bgcolor: "#1a1a1a",
-        margin: 0,
-        px: 3, // remove internal horizontal padding
-        width: "100vw", // full viewport width
+        px: 3,
+        width: "100vw",
         position: "relative",
         left: "50%",
         right: "50%",
@@ -17,12 +24,7 @@ export default function Facts() {
       }}
     >
       <Container maxWidth="lg">
-        <Box
-          sx={{
-            textAlign: "center",
-            mb: "60px",
-          }}
-        >
+        <Box sx={{ textAlign: "center", mb: "60px" }}>
           <Typography
             variant="h5"
             sx={{
@@ -62,25 +64,25 @@ export default function Facts() {
           {[
             {
               icon: "⭐",
-              number: "3450",
+              number: 3450,
               label: "Working Hours",
               color: "#FBA504",
             },
             {
               icon: "👥",
-              number: "250",
+              number: 250,
               label: "Happy Clients",
               color: "#FBA504",
             },
             {
               icon: "👑",
-              number: "15",
+              number: 15,
               label: "Awards Received",
               color: "#FBA504",
             },
             {
               icon: "✅",
-              number: "347",
+              number: 347,
               label: "Complete Projects",
               color: "#FBA504",
             },
@@ -96,14 +98,11 @@ export default function Facts() {
               }}
             >
               <Typography
-                sx={{
-                  fontSize: "40px",
-                  color: item.color,
-                  mb: "10px",
-                }}
+                sx={{ fontSize: "40px", color: item.color, mb: "10px" }}
               >
                 {item.icon}
               </Typography>
+
               <Typography
                 variant="h3"
                 sx={{
@@ -114,13 +113,18 @@ export default function Facts() {
                   mb: "8px",
                 }}
               >
-                <CountUp
-                  start={0}
-                  end={item.number}
-                  duration={2.5} // animation duration in seconds
-                  separator=","
-                />
+                {inView ? (
+                  <CountUp
+                    start={0}
+                    end={item.number}
+                    duration={2.5}
+                    separator=","
+                  />
+                ) : (
+                  0
+                )}
               </Typography>
+
               <Typography
                 variant="body1"
                 sx={{
