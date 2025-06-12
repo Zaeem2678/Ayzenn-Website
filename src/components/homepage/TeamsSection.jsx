@@ -48,7 +48,7 @@ const TeamsSection = () => {
             md: "repeat(3, 1fr)", // 3 columns on desktop
           },
           marginX: "100px",
-          gap: 0,
+          gap: { xs: 4, md: 6 }, // ✅ Add space between cards (16px on mobile, 24px on desktop)
           justifyContent: "center",
         }}
       >
